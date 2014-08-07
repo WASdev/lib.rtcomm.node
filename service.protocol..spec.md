@@ -26,14 +26,16 @@ Rtcomm events can be published from any component that uses the Rtcomm signaling
 
 Supported categories include:
 
-| Category          | Details                   |
+|                 Category                                          |
+| Value            | Details                   |
 | ----------------- | ------------------------- |
 | registration      | Events related to Rtcomm client registrations. |
 | session           | Events related to Rtcomm peer media sessions. |
 
 Supported actions include:
 
-| Action          | Details                   |
+| Action                             |
+| Value          | Details                   |
 | ----------------- | ------------------------- |
 | started      | Events related to creation of a new entity of a certain category type. |
 | modified           | Events related to modification of an existing entity of a certain category type. |
@@ -43,6 +45,7 @@ Supported actions include:
 
 Here are some examples of topics that can be subscribed on to filter on various Rtcomm events:
 
+| Subscription Examples                                     |
 | Topic                   | Details                                     |
 | ----------------------- |:-------------------------------------------:|
 | ../#                      | Receive all events                          |
