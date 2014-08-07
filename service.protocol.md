@@ -20,6 +20,25 @@ The next sections describe details on the various types of Rtcomm services and t
 
 ## Event Monitoring
 
+Rtcomm events can be published from any component that uses the Rtcomm signaling protocol but they are typically generated from server-side components such as the Rtcomm Node Connector in the WebSphere Liberty profile. These events are fired at a topic tree that allows event consumers to subscribe on only what is needed. The Rtcomm event topic tree makes it easy for consumers to filter on specific events. The following details what the event topic tree looks like (note that .. defines the event topic root typically configured at the event source):
+
+`../{registration|session}/{started|modified|stopped/fromEndpointID/toEndpointID}`
+
+Here are some examples of what can be subscribed on to filter on various messages:
+
+| Topic                   | Details                                     |
+| ----------------------- |:-------------------------------------------:|
+| ../#                      | Receive all events                          |
+| ../registration/#         | Receive all registration events             |
+| ../session/#              | Receive all session events                  |
+| ../registration/started/# | Receive an event every time a new client registers    |
+| ../registration/started/iggy_pop | Receive an event every time Iggy Pop registers |
+| ../session/strated/iggy_pop/# | Receive an event every time Iggy Pop makes a call |
+
+
+
+
+## Third-Party Call Control
 
 
 
