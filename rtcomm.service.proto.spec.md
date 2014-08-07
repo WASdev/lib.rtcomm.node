@@ -3,7 +3,7 @@ Our main goals when building the base Rtcomm protocols were to make them extreme
 
 With that said, all Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
-1. Signaling protocol for connecting WebRTC clients into media sessions. See [rtcomm.signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.protocol.spec.md) for details.
+1. Signaling protocol for connecting WebRTC clients into media sessions. See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details.
 2. Service protocol for things like third party call control and event monitoring.
 
 This specification describes the service protocol which is implemented by the Rtcomm node.js modules included in this repository. This protocol is typically used to interact with server-side Rtcomm components such as the Liberty profile of the WebSphere application server (rtcomm-1.0 feature) to do things like:
@@ -77,7 +77,7 @@ In addition, session events can include these additional key/value pairs:
 | ----------------------|:-------------------------------------------:|
 | sigSessID             | Signaling session ID associated with this event.   |
 
-**See [rtcomm.signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.protocol.spec.md) for details on sigSessID**
+**See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details on sigSessID**
 
 ## Third-Party Call Control
 
