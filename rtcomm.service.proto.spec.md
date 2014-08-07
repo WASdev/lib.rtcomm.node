@@ -99,10 +99,6 @@ The 3PCC request message is as follows:
 
 The 3PCC response message is as follows:
 
-{"ibmRTC":"v 1.0","method":"RESPONSE","orig":"3PCC_PLACE_CALL","transID":"6c528abf-b01d-4528-b8e0-b13b93a46ff6","result":"SUCCESS"}
-{"ibmRTC":"v 1.0","method":"RESPONSE","orig":"3PCC_PLACE_CALL","transID":"6c528abf-b01d-4528-b8e0-b13b93a46ff6","result":"FAILURE","reason":"failure reason"}
-
-
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | RESPONSE |
