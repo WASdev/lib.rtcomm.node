@@ -55,7 +55,7 @@ Here are some examples of topics that can be subscribed on to filter on various 
 
 Since much of the information about the event is contained in the topic being published to, the event messages themselves are fairly simply. First, every Rtcomm event is a JSON object that contains the following key/value pairs:
 
-| Key                   | Details                                     |
+| Key                   | Value                                     |
 | ----------------------|:-------------------------------------------:|
 | method                | RTCOMM_EVENT_FIRED |
 | version               | e.g.  1.0          |
@@ -65,7 +65,7 @@ Since much of the information about the event is contained in the topic being pu
 
 In addition, registration events can also include these additional key/value pairs:
 
-| Key                   | Details                                     |
+| Key                   | Value                                     |
 | ----------------------|:-------------------------------------------:|
 | regTopic              | Topic name associated with this registration event |
 
@@ -73,16 +73,29 @@ In addition, registration events can also include these additional key/value pai
 
 In addition, session events can include these additional key/value pairs:
 
-| Key                   | Details                                     |
+| Key                   | Value                                     |
 | ----------------------|:-------------------------------------------:|
 | sigSessID             | Signaling session ID associated with this event.   |
 
-**See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details on sigSessID**
+**See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details on sigSessID.**
 
 ## Third-Party Call Control
 
 Third-party call control (3PCC) is used to initiate an Rtcomm peer-to-peer media session between two Rtcomm clients. Typically, a third-party call controller (such as the WebSphere Liberty Rtcomm Node Connector) subscribes on a well know MQTT topic to receive 3PCC request. The control is responsible for extracting the information needed from the 3PCC request and setting up the call. Once the session is either up and running or fails for some reason, a response to the 3PCC request is sent back to the originating requestor.
 
+The 3PCC request message is as follows:
+{"calleeEndpoint":"xxxID","callerEndpoint":"xxxID","fromTopic":"xxx","sessionID":"xxx"}
 
+| Key                   | Value                                     |
+| ----------------------|:-------------------------------------------:|
+| method                | 3PCC_PLACE_CALL |
+| version               | e.g.  1.0          |
+| transID               | transaction for this request/response. May also be used in the signaling transaction. |
+| callerEndpoint        | Calling endpoint ID associated with the resulting media session.    |
+| calleeEndpoint        | Endpoint ID who should receive the call.    |
+| fromTopic             | Topic the response to the request will be sent to    |
+| sessionID             | OPTIONAL: session ID that should be use for the resulting media session  |
+
+**Note that all sessionIDs should be UUIDs to insure they are globally unique**
 
 
