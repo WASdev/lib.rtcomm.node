@@ -27,14 +27,14 @@ Rtcomm events can be published from any component that uses the Rtcomm signaling
 Supported categories include:
 
 | Category            | Details                   |
-| ----------------- | ------------------------- |
+| ----------------- | :------------------------- |
 | registration      | Events related to Rtcomm client registrations. |
 | session           | Events related to Rtcomm peer media sessions. |
 
 Supported actions include:
 
 | Action          | Details                   |
-| ----------------- | ------------------------- |
+| ----------------- | :------------------------- |
 | started      | Events related to creation of a new entity of a certain category type. |
 | modified           | Events related to modification of an existing entity of a certain category type. |
 | stopped           | Events related to destruction of an existing entity of a certain category type. |
@@ -44,7 +44,7 @@ Supported actions include:
 Here are some examples of topics that can be subscribed on to filter on various Rtcomm events:
 
 | Topic                   | Details                                     |
-| ----------------------- |:-------------------------------------------:|
+| ----------------------- |:-------------------------------------------|
 | ../#                      | Receive all Rtcomm related events                          |
 | ../registration/#         | Receive all registration events             |
 | ../registration/#/mic_jagger | Receive all registration events related to Mic Jagger   |
@@ -56,7 +56,7 @@ Here are some examples of topics that can be subscribed on to filter on various 
 Since much of the information about the event is contained in the topic being published to, the event messages themselves are fairly simply. First, every Rtcomm event is a JSON object that contains the following key/value pairs:
 
 | Key                   | Value                                     |
-| ----------------------|:-------------------------------------------:|
+| ----------------------|:-------------------------------------------|
 | method                | RTCOMM_EVENT_FIRED |
 | version               | e.g.  1.0          |
 | timestamp             | e.g.  2014-08-01 17:32:07.735 |
@@ -66,7 +66,7 @@ Since much of the information about the event is contained in the topic being pu
 In addition, registration events can also include these additional key/value pairs:
 
 | Key                   | Value                                     |
-| ----------------------|:-------------------------------------------:|
+| ----------------------|:-------------------------------------------|
 | regTopic              | Topic name associated with this registration event |
 
 **Note that clients can register several appContext under the same endpoint ID**
@@ -74,7 +74,7 @@ In addition, registration events can also include these additional key/value pai
 In addition, session events can include these additional key/value pairs:
 
 | Key                   | Value                                     |
-| ----------------------|:-------------------------------------------:|
+| ----------------------|:-------------------------------------------|
 | sigSessID             | Signaling session ID associated with this event.   |
 
 **See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details on sigSessID.**
@@ -87,7 +87,7 @@ The 3PCC request message is as follows:
 {"calleeEndpoint":"xxxID","callerEndpoint":"xxxID","fromTopic":"xxx","sessionID":"xxx"}
 
 | Key                   | Value                                     |
-| ----------------------|:-------------------------------------------:|
+| ----------------------|:-------------------------------------------|
 | method                | 3PCC_PLACE_CALL |
 | version               | e.g.  1.0          |
 | transID               | transaction for this request/response. May also be used in the signaling transaction. |
