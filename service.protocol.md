@@ -32,17 +32,31 @@ Here are some examples of topics that can be subscribed on to filter on various 
 | ../registration/#         | Receive all registration events             |
 | ../session/#              | Receive all session events                  |
 | ../registration/started/# | Receive an event every time a new client registers    |
-| ../registration/started/iggy_pop | Receive an event every time Iggy Pop registers |
-| ../session/strated/iggy_pop/# | Receive an event every time Iggy Pop makes a call |
+| ../registration/started/mic_jagger | Receive an event every time Mic Jagger registers |
+| ../session/strated/mic_jagger/# | Receive an event every time Mic Jagger makes a call |
 
 Since much of the information about the event is contained in the topic being published to, the event messages themselves are fairly simply. First, every Rtcomm event is a JSON object that contains the following key/value pairs:
 
 | Key                   | Details                                     |
 | ----------------------|:-------------------------------------------:|
 | method                | RTCOMM_EVENT_FIRED |
-| timestamp             | 
+| version               | e.g.  1.0          |
+| timestamp             | e.g.  2014-08-01 17:32:07.735 |
 
-All registration related events co
+In addition, all registration events can also include these additional key/value pairs:
+
+| Key                   | Details                                     |
+| ----------------------|:-------------------------------------------:|
+| regTopic              | Topic name associated with this registration event |
+| transID             | Transaction ID associated transaction that caused this event (started|modified only) |
+| 
+
+In addition, all session  events can also include these additional key/value pairs:
+
+| Key                   | Details                                     |
+| ----------------------|:-------------------------------------------:|
+| regTopic              | Topic name associated with this registration event |
+| transID             | Transaction ID associated transaction that caused this event   |
 
 
 ## Third-Party Call Control
