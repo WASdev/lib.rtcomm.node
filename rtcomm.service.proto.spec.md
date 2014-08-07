@@ -84,7 +84,6 @@ In addition, session events can include these additional key/value pairs:
 Third-party call control (3PCC) is used to initiate an Rtcomm peer-to-peer media session between two Rtcomm clients. Typically, a third-party call controller (such as the WebSphere Liberty Rtcomm Node Connector) subscribes on a well know MQTT topic to receive 3PCC request. The control is responsible for extracting the information needed from the 3PCC request and setting up the call. Once the session is either up and running or fails for some reason, a response to the 3PCC request is sent back to the originating requestor.
 
 The 3PCC request message is as follows:
-{"calleeEndpoint":"xxxID","callerEndpoint":"xxxID","fromTopic":"xxx","sessionID":"xxx"}
 
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
@@ -98,4 +97,17 @@ The 3PCC request message is as follows:
 
 **Note that all sessionIDs should be UUIDs to insure they are globally unique**
 
+The 3PCC response message is as follows:
+
+{"ibmRTC":"v 1.0","method":"RESPONSE","orig":"3PCC_PLACE_CALL","transID":"6c528abf-b01d-4528-b8e0-b13b93a46ff6","result":"SUCCESS"}
+{"ibmRTC":"v 1.0","method":"RESPONSE","orig":"3PCC_PLACE_CALL","transID":"6c528abf-b01d-4528-b8e0-b13b93a46ff6","result":"FAILURE","reason":"failure reason"}
+
+
+| Key                   | Value                                     |
+| ----------------------|:-------------------------------------------|
+| method                | RESPONSE |
+| orig                  | 3PCC_PLACE_CALL          |
+| transID               | transaction for this request/response. May also be used in the signaling transaction. |
+| result                | SUCCESS or FAILURE    |
+| reason                | Provides a reason if there is a FAILURE. Not included with a SUCCESS response.    |
 
