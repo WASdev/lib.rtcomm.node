@@ -30,6 +30,7 @@ Here are some examples of topics that can be subscribed on to filter on various 
 | ----------------------- |:-------------------------------------------:|
 | ../#                      | Receive all events                          |
 | ../registration/#         | Receive all registration events             |
+| ../registration/#/mic_jagger | Receive all registration events related to Mic Jagger   |
 | ../session/#              | Receive all session events                  |
 | ../registration/started/# | Receive an event every time a new client registers    |
 | ../registration/started/mic_jagger | Receive an event every time Mic Jagger registers |
@@ -49,15 +50,18 @@ In addition, all registration events can also include these additional key/value
 | ----------------------|:-------------------------------------------:|
 | regTopic              | Topic name associated with this registration event |
 | transID             | Transaction ID associated transaction that caused this event (started|modified only) |
-| 
+| appContext             | Application context associated with this registration event    |
 
-In addition, all session  events can also include these additional key/value pairs:
+**Note that clients can register several appContext under the same endpoint ID**
+
+In addition, all session events can include these additional key/value pairs:
 
 | Key                   | Details                                     |
 | ----------------------|:-------------------------------------------:|
-| regTopic              | Topic name associated with this registration event |
-| transID             | Transaction ID associated transaction that caused this event   |
+| sigSessID             | Signaling session ID associated with this event.   |
+| appContext             | Application context associated with this registration event    |
 
+**See signaling.protocol.md for details on sigSessID**
 
 ## Third-Party Call Control
 
