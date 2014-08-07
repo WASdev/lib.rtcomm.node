@@ -61,7 +61,7 @@ In addition, session events can include these additional key/value pairs:
 | ----------------------|:-------------------------------------------:|
 | sigSessID             | Signaling session ID associated with this event.   |
 
-**See signaling.protocol.md for details on sigSessID**
+**See [signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/signaling.protocol.md) for details on sigSessID**
 
 ## Third-Party Call Control
 
