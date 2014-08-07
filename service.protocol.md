@@ -1,9 +1,9 @@
 # Abstract
-Starting out, our main goals when building the base Rtcomm protocols were to make them both extremely simple and extremely useful. After years of working with telco based protocols like SIP, we wanted to create something simpler for the web that did not carry all the baggage necessary to support the global telephone network but we also wanted it to be interoperable with those legacy protocols if needed.
+Our main goals when building the base Rtcomm protocols were to make them extremely simple and extremely useful. After years of working with telco based protocols like SIP, we wanted to create something simpler for the web that did not carry all the baggage necessary to support the global telephone network but we also wanted it to be interoperable with those legacy protocols when needed.
 
-The Rtcomm MQTT based protocol can be broken down into the following two parts:
+With that said, all Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
-1. Signalling protocol for connecting WebRTC clients.
+1. Signaling protocol for connecting WebRTC clients into media sessions.
 2. Service protocol for things like third party call control and event monitoring.
 
 This specification describes the service protocol which is implemented by the Rtcomm node.js modules included in this repository. This protocol is typically used to interact with server-side Rtcomm components such as the Liberty profile of the WebSphere application server (rtcomm-1.0 feature) to do things like:
@@ -22,9 +22,9 @@ The next sections describe details on the various types of Rtcomm services and t
 
 Rtcomm events can be published from any component that uses the Rtcomm signaling protocol but they are typically generated from server-side components such as the Rtcomm Node Connector in the WebSphere Liberty profile. These events are fired at a topic tree that allows event consumers to subscribe on only what is needed. The Rtcomm event topic tree makes it easy for consumers to filter on specific events. The following details what the event topic tree looks like (note that .. defines the event topic root typically configured at the event source):
 
-`../{registration|session}/{started|modified|stopped/fromEndpointID/toEndpointID}`
+`../{registration|session}/{started|modified|stopped|failed}/fromEndpointID/toEndpointID}`
 
-Here are some examples of what can be subscribed on to filter on various messages:
+Here are some examples of topics that can be subscribed on to filter on various Rtcomm events:
 
 | Topic                   | Details                                     |
 | ----------------------- |:-------------------------------------------:|
@@ -35,7 +35,14 @@ Here are some examples of what can be subscribed on to filter on various message
 | ../registration/started/iggy_pop | Receive an event every time Iggy Pop registers |
 | ../session/strated/iggy_pop/# | Receive an event every time Iggy Pop makes a call |
 
+Since much of the information about the event is contained in the topic being published to, the event messages themselves are fairly simply. First, every Rtcomm event is a JSON object that contains the following key/value pairs:
 
+| Key                   | Details                                     |
+| ----------------------|:-------------------------------------------:|
+| method                | RTCOMM_EVENT_FIRED |
+| timestamp             | 
+
+All registration related events co
 
 
 ## Third-Party Call Control
