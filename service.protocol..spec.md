@@ -3,7 +3,7 @@ Our main goals when building the base Rtcomm protocols were to make them extreme
 
 With that said, all Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
-1. Signaling protocol for connecting WebRTC clients into media sessions.
+1. Signaling protocol for connecting WebRTC clients into media sessions. See [signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/signaling.protocol.spec.md) for details.
 2. Service protocol for things like third party call control and event monitoring.
 
 This specification describes the service protocol which is implemented by the Rtcomm node.js modules included in this repository. This protocol is typically used to interact with server-side Rtcomm components such as the Liberty profile of the WebSphere application server (rtcomm-1.0 feature) to do things like:
@@ -45,7 +45,7 @@ Here are some examples of topics that can be subscribed on to filter on various 
 
 | Topic                   | Details                                     |
 | ----------------------- |:-------------------------------------------:|
-| ../#                      | Receive all events                          |
+| ../#                      | Receive all Rtcomm related events                          |
 | ../registration/#         | Receive all registration events             |
 | ../registration/#/mic_jagger | Receive all registration events related to Mic Jagger   |
 | ../session/#              | Receive all session events                  |
@@ -68,7 +68,6 @@ In addition, registration events can also include these additional key/value pai
 | Key                   | Details                                     |
 | ----------------------|:-------------------------------------------:|
 | regTopic              | Topic name associated with this registration event |
-| transID             | Transaction ID associated transaction that caused this event (started|modified only) |
 
 **Note that clients can register several appContext under the same endpoint ID**
 
