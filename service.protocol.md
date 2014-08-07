@@ -43,23 +43,23 @@ Since much of the information about the event is contained in the topic being pu
 | method                | RTCOMM_EVENT_FIRED |
 | version               | e.g.  1.0          |
 | timestamp             | e.g.  2014-08-01 17:32:07.735 |
+| appContext            | Application context associated with the event    |
+| reason                | Any failed event will include a reason    |
 
-In addition, all registration events can also include these additional key/value pairs:
+In addition, registration events can also include these additional key/value pairs:
 
 | Key                   | Details                                     |
 | ----------------------|:-------------------------------------------:|
 | regTopic              | Topic name associated with this registration event |
 | transID             | Transaction ID associated transaction that caused this event (started|modified only) |
-| appContext             | Application context associated with this registration event    |
 
 **Note that clients can register several appContext under the same endpoint ID**
 
-In addition, all session events can include these additional key/value pairs:
+In addition, session events can include these additional key/value pairs:
 
 | Key                   | Details                                     |
 | ----------------------|:-------------------------------------------:|
 | sigSessID             | Signaling session ID associated with this event.   |
-| appContext             | Application context associated with this registration event    |
 
 **See signaling.protocol.md for details on sigSessID**
 
