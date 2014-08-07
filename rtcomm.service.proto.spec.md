@@ -3,14 +3,14 @@ Our main goals when building the base Rtcomm protocols were to make them extreme
 
 With that said, all Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
-1. Signaling protocol for connecting WebRTC clients into media sessions. See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details.
+1. Signaling protocol for connecting WebRTC clients into media sessions. See [**rtcomm.signaling.proto.md**](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details.
 2. Service protocol for things like third party call control and event monitoring.
 
 This specification describes the service protocol which is implemented by the Rtcomm node.js modules included in this repository. This protocol is typically used to interact with server-side Rtcomm components such as the Liberty profile of the WebSphere application server (rtcomm-1.0 feature) to do things like:
 
 1. Monitor events related to the starting and stopping of new signalling sessions.
-1. Monitor when endpoints register and unregister.
-1. Initiate a third party call request.
+2. Monitor when endpoints register and unregister.
+3. Initiate a third party call request.
 
 # Rtcomm Services
 
@@ -80,6 +80,8 @@ In addition, session events can include these additional key/value pairs:
 **See [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details on sigSessID**
 
 ## Third-Party Call Control
+
+Third-party call control (3PCC) is used to initiate an Rtcomm peer-to-peer media session between two Rtcomm clients. Typically, a third-party call controller (such as the WebSphere Liberty Rtcomm Node Connector) subscribes on a well know MQTT topic to receive 3PCC request. The control is responsible for extracting the information needed from the 3PCC request and setting up the call. Once the session is either up and running or fails for some reason, a response to the 3PCC request is sent back to the originating requestor.
 
 
 
