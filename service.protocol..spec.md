@@ -22,7 +22,24 @@ The next sections describe details on the various types of Rtcomm services and t
 
 Rtcomm events can be published from any component that uses the Rtcomm signaling protocol but they are typically generated from server-side components such as the Rtcomm Node Connector in the WebSphere Liberty profile. These events are fired at a topic tree that allows event consumers to subscribe on only what is needed. The Rtcomm event topic tree makes it easy for consumers to filter on specific events. The following details what the event topic tree looks like (note that .. defines the event topic root typically configured at the event source):
 
-`../{registration|session}/{started|modified|stopped|failed}/fromEndpointID/toEndpointID}`
+`../<category>/<action>/fromEndpointID/toEndpointID}`
+
+Supported categories include:
+
+| Category          | Details                   |
+| ----------------- | ------------------------- |
+| registration      | Events related to Rtcomm client registrations. |
+| session           | Events related to Rtcomm peer media sessions. |
+
+Supported actions include:
+
+| Action          | Details                   |
+| ----------------- | ------------------------- |
+| started      | Events related to creation of a new entity of a certain category type. |
+| modified           | Events related to modification of an existing entity of a certain category type. |
+| stopped           | Events related to destruction of an existing entity of a certain category type. |
+| failed           | Events related to the failure of a new or existing entity of a certain category type. |
+
 
 Here are some examples of topics that can be subscribed on to filter on various Rtcomm events:
 
@@ -61,7 +78,7 @@ In addition, session events can include these additional key/value pairs:
 | ----------------------|:-------------------------------------------:|
 | sigSessID             | Signaling session ID associated with this event.   |
 
-**See [signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/signaling.protocol.md) for details on sigSessID**
+**See [signaling.protocol.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/signaling.protocol.spec.md) for details on sigSessID**
 
 ## Third-Party Call Control
 
