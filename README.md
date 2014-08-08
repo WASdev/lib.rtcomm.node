@@ -23,7 +23,6 @@ export PATH=$PATH:Runtimes/node/bin
 
 Change directory to your PROJECT Directory where you want to run/test the packages listed and continue with the INSTALL
 
-##INSTALL
 npm install <path to njs/> 
 npm install <path to red/>
 
