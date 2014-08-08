@@ -1,0 +1,20 @@
+{
+  "name": "rtcomm",
+  "version": "0.0.1",
+  "description": "IBM Rtcomm Node.js Library",
+  "main": "index.js",
+  "dependencies": {
+    "mqtt": "~0.3.11"
+  },
+  "devDependencies": {
+   "intern":"~2.0.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "rtcomm"
+  ],
+  "author": "swgraham@us.ibm.com",
+  "license": "IBM"
+}
