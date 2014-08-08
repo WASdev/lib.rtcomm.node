@@ -58,7 +58,7 @@ Since much of the information about the event is contained in the topic being pu
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | RTCOMM_EVENT_FIRED |
-| version               | e.g.  1.0          |
+| rtcommVer             | e.g.  1.0          |
 | timestamp             | e.g.  2014-08-01 17:32:07.735 |
 | appContext            | Application context associated with the event    |
 | reason                | Any failed event will include a reason    |
@@ -88,7 +88,7 @@ The 3PCC request message is as follows:
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | 3PCC_PLACE_CALL |
-| version               | e.g.  1.0          |
+| rtcommVer             | e.g.  1.0          |
 | transID               | transaction for this request/response. May also be used in the signaling transaction. |
 | callerEndpoint        | Calling endpoint ID associated with the resulting media session.    |
 | calleeEndpoint        | Endpoint ID who should receive the call.    |
