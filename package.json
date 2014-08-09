@@ -13,7 +13,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [
-    "rtcomm"
+    "rtcomm",
+    "webrtc",
+    "sip",
+    "Liberty",
+    "WebSphere"
   ],
   "author": "swgraham@us.ibm.com",
   "license": "Apache"
