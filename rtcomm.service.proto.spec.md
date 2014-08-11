@@ -1,7 +1,8 @@
-# Abstract
-Our main goals when building the base Rtcomm protocols were to make them extremely simple and extremely useful. After years of working with telco based protocols like SIP, we wanted to create something simpler for the web that did not carry all the baggage necessary to support the global telephone network but we also wanted it to be interoperable with those legacy protocols when needed.
+#Protocol specification for lib.rtcomm.node 
 
-With that said, all Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
+
+## Abstract
+All Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
 1. Signaling protocol for connecting WebRTC clients into media sessions. See [**rtcomm.signaling.proto.md**](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details.
 2. Service protocol for things like third party call control and event monitoring.

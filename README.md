@@ -3,29 +3,39 @@
 This repository contains the 'rtcomm' node.js Module which includes support for all of the following
 
 1. Event monitoring of Rtcomm services.
-2. Third party call control (basically the ability to initiate a 3rd party call).
+2. Third party call control (the ability to initiate a 3rd party call).
 
 ##Install
-Included is a package.json which enables the node module to be installed with 'npm' into node.js
+```
+npm install rtcomm
+```
 
-First, you need to install node.js - download a version (latest ) from here:
-   http://nodejs.org
+This module relies on the following:
 
-Extract the downloaded file into a directory, for example:
+1. An MQTT broker for publishing and receiving messages. 
+2. An Rtcomm server that supports Rtcomm 3rd party calling and/or event monitoring. 
 
-mkdir Runtimes
-cd Runtimes
-tar -zxvf node_v0.10.29-darwin-x64.tar.gz
-mv node_v0.10.29-darwin-x64 node
+**MQTT Broker examples:**
 
-Add Runtimes/node/bin to your path.
-export PATH=$PATH:Runtimes/node/bin
+There are many MQTT brokers on the market, both publicaly accessible and 
 
-Change directory to your PROJECT Directory where you want to run/test the packages listed and continue with the INSTALL
+Because Liberty does not currently include native support for an MQTT message broker, this feature requires an external broker. Many options of MQTT message brokers exist in the market today. Here is a list of some of the more commonly used MQTT message brokers:
 
-npm install <path to njs/> 
-npm install <path to red/>
+[IBM MessageSight](http://www-03.ibm.com/software/products/en/messagesight)  
+[WebSphere MQ Telemetry](http://www-03.ibm.com/software/products/en/wmq-telemetry)  
+[Mosquitto](http://mosquitto.org/) (open source MQTT broker)  
 
-This should install all dependencies and enable the functionality.
+A quick options for demonstrations and testing this module is tcp://broker.mqttdashboard.com:1883. 
+The MQTT Dashboard is an open, publicly accessible MQTT broker.  
 
-This is intended to be pushed to Github on Wasdev.
+**Rtcomm server example:**
+
+The WebSphere Liberty profile beta extended package which can be downloaded from: 
+https://developer.ibm.com/wasdev/downloads/liberty-profile-beta/
+
+##Documentation
+
+There are two parts to the documentation of this modules:
+
+1. The Rtcomm services protocol that is implemented by this module: [rtcomm.service.proto.spec.md](https://github.com/WASdev/lib.rtcomm.node/blob/master/rtcomm.service.proto.spec.md)
+2. The API specification for this module: [rtcomm.service.api.spec.md](https://github.com/WASdev/lib.rtcomm.node/blob/master/rtcomm.service.api.spec.md)
