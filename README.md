@@ -5,6 +5,8 @@ This repository contains the 'rtcomm' node.js Module which includes support for 
 1. Event monitoring of Rtcomm services.
 2. Third party call control (the ability to initiate a 3rd party call).
 
+This module relies on both a message broker for sending (publishing) and receiving messages and the WebSphere Liberty rtcomm-1.0 feature to actually deliver these services. This node.js module is simply a client to these services. It can subscribe and receive rtcomm related events or it can initiate a 3rd party call between two endpoints.
+
 ##Install
 ```
 npm install rtcomm
