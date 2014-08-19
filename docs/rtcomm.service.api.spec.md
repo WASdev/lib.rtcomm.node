@@ -19,12 +19,13 @@ Return an EventMonitor object.  This will be a new object if the key for the mon
 |eventPath| EventPath topic server emits events on|
 |server| MQTT Broker server name|
 |port|  MQTT Broker Server port|
+|unique|  **false**, Change to **true** to create unique monitor and mqtt connection rather than use existing one w/ same broker |
 
 Returns an 'EventMonitor' Object.
 
 ```
 var em = require('rtcomm').EventMonitor;
-var myEm = em.get({server: server.broker.com, port: 1883, '/eventPath/'});
+var myEm = em.get({server: server.broker.com, port: 1883, eventPath: '/eventPath/', unique: true});
 
 ```
 
