@@ -39,5 +39,5 @@ https://developer.ibm.com/wasdev/downloads/liberty-profile-beta/
 
 There are two parts to the documentation of this modules:
 
-1. The Rtcomm services protocol that is implemented by this module: [rtcomm.service.proto.spec.md](docs/rtcomm.service.proto.spec.md)
-2. The API specification for this module: [rtcomm.service.api.spec.md](docs/rtcomm.service.api.spec.md)
+1. The Rtcomm services protocol that is implemented by this module: [rtcomm.service.proto.spec.md](/rtcomm.service.proto.spec.md)
+2. The API specification for this module: [rtcomm.service.api.spec.md](/rtcomm.service.api.spec.md)
