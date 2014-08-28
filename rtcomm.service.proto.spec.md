@@ -88,7 +88,7 @@ The 3PCC request message is as follows:
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | 3PCC_PLACE_CALL |
-| rtcommVer             | e.g.  1.0          |
+| rtcommVer             | e.g.  v0.0.1          |
 | transID               | transaction for this request/response. May also be used in the signaling transaction. |
 | callerEndpoint        | Calling endpoint ID associated with the resulting media session.    |
 | calleeEndpoint        | Endpoint ID who should receive the call.    |
