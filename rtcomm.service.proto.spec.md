@@ -1,8 +1,7 @@
-#Protocol specification for lib.rtcomm.node 
-
+#Rtcomm Service Protocol Specification: v0.0.1 
 
 ## Abstract
-All Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
+This specification defines v0.0.1 of the Service Protocol.  All Rtcomm protocols are built on top of MQTT. They are JSON based and as lightweight as possible. The protocol can be broken down into the following two parts:
 
 1. Signaling protocol for connecting WebRTC clients into media sessions. See [**rtcomm.signaling.proto.md**](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md) for details.
 2. Service protocol for things like third party call control and event monitoring.
@@ -59,7 +58,7 @@ Since much of the information about the event is contained in the topic being pu
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | RTCOMM_EVENT_FIRED |
-| rtcommVer             | e.g.  1.0          |
+| rtcommVer             | e.g.  v0.0.1
 | timestamp             | e.g.  2014-08-01 17:32:07.735 |
 | appContext            | Application context associated with the event    |
 | reason                | Any failed event will include a reason    |
@@ -89,7 +88,7 @@ The 3PCC request message is as follows:
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | 3PCC_PLACE_CALL |
-| rtcommVer             | e.g.  1.0          |
+| rtcommVer             | e.g.  v0.0.1          |
 | transID               | transaction for this request/response. May also be used in the signaling transaction. |
 | callerEndpoint        | Calling endpoint ID associated with the resulting media session.    |
 | calleeEndpoint        | Endpoint ID who should receive the call.    |
