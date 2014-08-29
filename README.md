@@ -14,7 +14,8 @@ npm install rtcomm
 Note: specific releases of this repository can be installed via the following command:
 npm install rtcomm@<version>
 
-See the wiki page for what versions have been tested with specific versions of the WebSphere Liberty profile.
+See the wiki page for what versions have been tested with specific versions of the 
+WebSphere Liberty profile.
 ```
 
 This module relies on the following:
