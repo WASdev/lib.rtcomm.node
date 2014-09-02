@@ -88,8 +88,16 @@ The following methods provide a simple way create a filter for the most common t
 
 *Message:* 
 
+The message content is defined in the [Service Protocol Definition](rtcomm.service.proto.spec.md).  An example message for a signaling session event would look like:  
+
 ```
-{ method: 'RTCOMM_EVENT_FIRED' }
+{ method: 'RTCOMM_EVENT_FIRED',
+  rtcommVer: 'v0.0.1',
+  timestamp: '2014-08-01 17:32:07.735',
+  appContext: 'rtcomm',
+  sigSessID: 'ca80371e-0b42-49a2-ad32-c88711f573e7' 
+  
+  }
 ```
 
 ##### .allEndpointEvents(endpointid, filterFunction)
