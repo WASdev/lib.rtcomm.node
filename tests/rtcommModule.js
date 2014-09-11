@@ -16,7 +16,7 @@
 define([
     'intern!object',
     'intern/chai!assert',
-    'intern/dojo/node!../lib/EventMonitor'
+    'intern/dojo/node!../lib/RtcConnector'
 ], function (registerSuite, assert, rtcomm) {
     var config1 = {server:'svt-msd1.rtp.raleigh.ibm.com',port:1883,eventPath:'/rtcomm/event'};
     var config2 = {server:'svt-msd2.rtp.raleigh.ibm.com',port:1883,eventPath:'/rtcomm/event'};
@@ -26,7 +26,7 @@ define([
             var em = rtcomm.get(config1);
             var em2 = rtcomm.get(config1);
             assert.strictEqual(em, em2,
-                'EventMonitor  should return same object if same config ');
+                'RtcConnector  should return same object if same config ');
             assert.strictEqual(rtcomm.list().length, 1);
  //           console.log(rtcomm.list());
             
@@ -35,7 +35,7 @@ define([
             var em = rtcomm.get(config1);
             var em2 = rtcomm.get(config2);
             assert.notStrictEqual(em, em2,
-                'EventMonitor should return a different object if a different configuration ');
+                'RtcConnector should return a different object if a different configuration ');
             assert.strictEqual(rtcomm.list().length, 2);
 //            console.log(rtcomm.list());
         },
