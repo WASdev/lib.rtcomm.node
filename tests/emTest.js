@@ -19,7 +19,7 @@ var mqConfig = {
   'port': 1883,
   'eventPath':eventPath };
 
-var evMon = require('./EventMonitor.js');
+var evMon = require('./RtcConnector.js');
 
 function createMqttClient () {
   var mqtt = require('mqtt');

@@ -1,11 +1,13 @@
 #lib.rtcomm.node
 
-This repository contains the 'rtcomm' node.js Module which includes support for all of the following
+This repository contains the 'rtcomm' node.js Module. This module extends the real-time communications services of the WebSphere Liberty profile. Currently, the service extensions represented in 
+this library include :
 
-1. Event monitoring of Rtcomm services.
-2. Third party call control (the ability to initiate a 3rd party call).
+1. RtcConnector: Provides the ability to monitor all events related to the WebSphere Liberty RtcConnector. 
+2. 3PCC (Third party call control):  Providers the ability to initiate a 3rd party calls.
 
-This module relies on both a message broker for sending (publishing) and receiving messages and the WebSphere Liberty rtcomm-1.0 feature to actually deliver these services. This node.js module is simply a client to these services. It can subscribe and receive rtcomm related events or it can initiate a 3rd party call between two endpoints.
+This module relies on both a message broker for sending (publishing) and receiving messages and the WebSphere Liberty rtcomm-1.0 feature to deliver these services. This node.js module is simply a client to these services. It can subscribe and receive RtcConnector related events and it can initiate a 3rd party call between two endpoints 
+that are both registered with the WebSphere Liberty server. Eventually we would like to be able to provision these services directly from this node.js library but for now the backend Liberty rtcomm services have to be configured at the Liberty server.
 
 ##Install
 ```

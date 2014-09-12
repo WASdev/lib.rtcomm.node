@@ -2,5 +2,5 @@
  * @namespace rtcomm
  */
 
-exports.EventMonitor = require('./lib/EventMonitor.js');
+exports.RtcConnector = require('./lib/RtcConnector.js');
 exports.ThirdPartyCC = require('./lib/3pcc.js');
