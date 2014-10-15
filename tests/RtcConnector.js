@@ -59,7 +59,6 @@ define([
                 'EventMonitor  should return same object if same config ');
             assert.strictEqual(eventMonitor.list().length, 1,
               'only 1 Monitor listed');
-            
         },
         'Create a second monitor with different config': function() {
             var em2 = eventMonitor.get(config2);
