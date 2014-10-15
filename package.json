@@ -4,13 +4,13 @@
   "description": "IBM Rtcomm Node.js Library - beta",
   "main": "index.js",
   "dependencies": {
-  "mqtt": "~0.3.11"
+    "mqtt": "~0.3.11"
   },
   "devDependencies": {
-   "intern":"~2.0.1"
+    "intern": "~2.0.3"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "intern-client config=tests/intern"
   },
   "keywords": [
     "rtcomm",
@@ -22,13 +22,13 @@
   "author": "swgraham@us.ibm.com",
   "contributors": [
     "Brian Pulito <brian_pulito@us.ibm.com> (https://github.com/bpulito)"
-  ],  
+  ],
   "license": "Apache",
-  "repository" : { 
-  		"type" : "git", 
-  		"url" : "https://github.com/WASdev/lib.rtcomm.node.git"
-	  },
-  "bugs" : { 
-  		"url" : "https://github.com/WASdev/lib.rtcomm.node/issues"
-	  }
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/WASdev/lib.rtcomm.node.git"
+  },
+  "bugs": {
+    "url": "https://github.com/WASdev/lib.rtcomm.node/issues"
+  }
 }

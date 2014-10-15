@@ -17,7 +17,7 @@ define([
     'intern!object',
     'intern/chai!assert',
     'intern/dojo/node!util',
-    'intern/dojo/node!../lib/EventMonitor'
+    'intern/dojo/node!../lib/RtcConnector'
 ], function (registerSuite, assert, util, eventMonitor) {
 
     var eventPath = '/rtcomm/event';
