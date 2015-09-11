@@ -86,7 +86,7 @@ myEm.allEndpointEvents('scott', function(message) {
 #### Filter Methods
 The following methods provide a simple way create a filter for the most common types of events.  The callback is called with a *topic* and *message*:
 
-*Topic:*  /eventPath/[session|registration]/[started|stopped|modified|failed]/fromEndpointID/toEndpointID 
+*Topic:*  /eventPath/[session]/[started|stopped|modified|failed]/fromEndpointID/toEndpointID 
 
 *Message:* 
 
@@ -100,8 +100,8 @@ Return events generated TO or FROM the given endpointid.   Passes 'topic' and 'm
 ##### .allEventFilter(filterFunction)
 Return all events.   Passes 'topic' and 'message' to the callback *filterFunction*
 
-##### .allRegistrationEvents(filterFunction)
-Return all *registration* events.   Passes 'topic' and 'message'  to the callback *filterFunction*
+##### .allPresenceEvents(filterFunction)
+Return all presence events.   Passes 'topic' and 'message'  to the callback *filterFunction*
 
 #####.allSessionEvents(filterFunction)
 Return all *session* events.   Passes 'topic' and 'message'  to the callback *filterFunction*
@@ -114,7 +114,6 @@ Create a custom filter.  It is advised to check the above for common filters to 
 {
           'category': {
             'session': /*boolean*/ true, 
-            'registration':/*boolean*/ true },
            'action': {
              'started':/*boolean*/ true,
              'modified':/*boolean*/ true,
@@ -123,7 +122,7 @@ Create a custom filter.  It is advised to check the above for common filters to 
            'toendpointid': /* String */ toEndpoint,
            'fromendpointid': /* String */ fromEndpoint}
 ```
-For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.category**) both **configopts.category.session** and **configopts.category.registration** will be true and both session and registration events will be included.  The same is true for **configopts.action**.   
+For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.action**) all **configopts.action.start** , **configopts.action.modified** , **configopts.action.stopped** and **configopts.action.failed** will be true and all of the actions will be included.     
 
 Returns all events matching the customer filter.  Passes 'topic' and 'message' to the callback *filterFunction*.
 
