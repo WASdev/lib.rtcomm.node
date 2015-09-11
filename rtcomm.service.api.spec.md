@@ -174,9 +174,3 @@ my3pcc.start();
 my3pcc.startCall('scott','brian');
 ```
 The above asks the server to have **scott** call **brian**
-
-
-
-
-
-
