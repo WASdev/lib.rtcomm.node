@@ -86,30 +86,23 @@ myEm.allEndpointEvents('scott', function(message) {
 #### Filter Methods
 The following methods provide a simple way create a filter for the most common types of events.  The callback is called with a *topic* and *message*:
 
-*Topic:*  /eventPath/[session|registration]/[started|stopped|modified|failed]/fromEndpointID/toEndpointID 
+*Topic:*  /eventPath/[session]/[started|stopped|modified|failed]/fromEndpointID/toEndpointID 
 
 *Message:* 
 
-The message content is defined in the [Service Protocol Definition](rtcomm.service.proto.spec.md).  An example message for a signaling session event would look like:  
-
 ```
-{ method: 'RTCOMM_EVENT_FIRED',
-  rtcommVer: 'v0.0.1',
-  timestamp: '2014-08-01 17:32:07.735',
-  appContext: 'rtcomm',
-  sigSessID: 'ca80371e-0b42-49a2-ad32-c88711f573e7' 
-  
-  }
+{ method: 'RTCOMM_EVENT_FIRED' }
 ```
 
 ##### .allEndpointEvents(endpointid, filterFunction)
 Return events generated TO or FROM the given endpointid.   Passes 'topic' and 'message'  to the callback *filterFunction*
+Examples include: <rtcommTopicPath>/connector for session events or  <rtcommTopicPath>/sphere for presence events
 
 ##### .allEventFilter(filterFunction)
 Return all events.   Passes 'topic' and 'message' to the callback *filterFunction*
 
-##### .allRegistrationEvents(filterFunction)
-Return all *registration* events.   Passes 'topic' and 'message'  to the callback *filterFunction*
+##### .allPresenceEvents(filterFunction)
+Return all presence events.   Passes 'topic' and 'message'  to the callback *filterFunction*
 
 #####.allSessionEvents(filterFunction)
 Return all *session* events.   Passes 'topic' and 'message'  to the callback *filterFunction*
@@ -122,7 +115,6 @@ Create a custom filter.  It is advised to check the above for common filters to 
 {
           'category': {
             'session': /*boolean*/ true, 
-            'registration':/*boolean*/ true },
            'action': {
              'started':/*boolean*/ true,
              'modified':/*boolean*/ true,
@@ -131,7 +123,7 @@ Create a custom filter.  It is advised to check the above for common filters to 
            'toendpointid': /* String */ toEndpoint,
            'fromendpointid': /* String */ fromEndpoint}
 ```
-For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.category**) both **configopts.category.session** and **configopts.category.registration** will be true and both session and registration events will be included.  The same is true for **configopts.action**.   
+For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.action**) all action events include **configopts.action.start** , **configopts.action.modified** , **configopts.action.stopped** and **configopts.action.failed** will be true and all of the actions will be included.     
 
 Returns all events matching the customer filter.  Passes 'topic' and 'message' to the callback *filterFunction*.
 
@@ -182,9 +174,3 @@ my3pcc.start();
 my3pcc.startCall('scott','brian');
 ```
 The above asks the server to have **scott** call **brian**
-
-
-
-
-
-

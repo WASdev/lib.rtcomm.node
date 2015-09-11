@@ -1,13 +1,13 @@
 {
   "name": "rtcomm",
-  "version": "v1.0.0-beta.5",
-  "description": "IBM Rtcomm Node.js Library - beta",
+  "version": "v1.0.0",
+  "description": "IBM Rtcomm Node.js Library",
   "main": "index.js",
   "dependencies": {
     "mqtt": "~0.3.11"
   },
   "devDependencies": {
-    "intern": "^2.0.3"
+    "intern": "~2.0.3"
   },
   "scripts": {
     "test": "intern-client config=tests/intern"
