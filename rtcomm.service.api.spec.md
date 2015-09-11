@@ -96,6 +96,7 @@ The following methods provide a simple way create a filter for the most common t
 
 ##### .allEndpointEvents(endpointid, filterFunction)
 Return events generated TO or FROM the given endpointid.   Passes 'topic' and 'message'  to the callback *filterFunction*
+Examples include: <rtcommTopicPath>/connector for session events or  <rtcommTopicPath>/sphere for presence events
 
 ##### .allEventFilter(filterFunction)
 Return all events.   Passes 'topic' and 'message' to the callback *filterFunction*
@@ -122,7 +123,7 @@ Create a custom filter.  It is advised to check the above for common filters to 
            'toendpointid': /* String */ toEndpoint,
            'fromendpointid': /* String */ fromEndpoint}
 ```
-For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.action**) all **configopts.action.start** , **configopts.action.modified** , **configopts.action.stopped** and **configopts.action.failed** will be true and all of the actions will be included.     
+For *configopts*, the default is to *INCLUDE* all events, when a flag is not included (like **configopts.action**) all action events include **configopts.action.start** , **configopts.action.modified** , **configopts.action.stopped** and **configopts.action.failed** will be true and all of the actions will be included.     
 
 Returns all events matching the customer filter.  Passes 'topic' and 'message' to the callback *filterFunction*.
 

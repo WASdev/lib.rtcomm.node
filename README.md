@@ -3,11 +3,11 @@
 This repository contains the 'rtcomm' node.js Module. This module extends the real-time communications services of the WebSphere Liberty profile. Currently, the service extensions represented in 
 this library include :
 
-1. RtcConnector: Provides the ability to monitor all events related to the WebSphere Liberty RtcConnector. 
+1. RtcConnector: Provides the ability to monitor all events related to the rtcomm protocol including session and presence events. 
 2. 3PCC (Third party call control):  Providers the ability to initiate a 3rd party calls.
 
 This module relies on both a message broker for sending (publishing) and receiving messages and the WebSphere Liberty rtcomm-1.0 feature to deliver these services. This node.js module is simply a client to these services. It can subscribe and receive RtcConnector related events and it can initiate a 3rd party call between two endpoints 
-that are both registered with the WebSphere Liberty server. Eventually we would like to be able to provision these services directly from this node.js library but for now the backend Liberty rtcomm services have to be configured at the Liberty server.
+that are both registered with the WebSphere Liberty server. 
 
 ##Install
 ```
@@ -45,7 +45,8 @@ https://developer.ibm.com/wasdev/downloads/liberty-profile-beta/
 
 ##Documentation
 
-There are two parts to the documentation of this modules:
+There are three parts to the documentation of this module:
 
 1. The Rtcomm services protocol that is implemented by this module: [rtcomm.service.proto.spec.md](/rtcomm.service.proto.spec.md)
 2. The API specification for this module: [rtcomm.service.api.spec.md](/rtcomm.service.api.spec.md)
+3. The Presence events are defined on: [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md)

@@ -9,8 +9,7 @@ This specification defines v1.0.0 of the Service Protocol.  All Rtcomm protocols
 This specification describes the service protocol which is implemented by the Rtcomm node.js modules included in this repository. This protocol is used to interact with server-side Rtcomm components running on the Liberty profile of the WebSphere application server (rtcomm-1.0 feature) to do things like:
 
 1. Monitor events related to the starting and stopping of new signaling sessions.
-2. Monitor when endpoints register and unregister.
-3. Initiate a third party call request.
+2. Initiate a third party call request.
 
 # Rtcomm Services
 
@@ -22,7 +21,7 @@ The next sections describe details on the various types of Rtcomm services and t
 
 Rtcomm session events are published from an Rtcomm service which is part of the rtcomm-1.0 feature in the WebSphere Liberty profile. These events are fired at a topic tree that allows event consumers to subscribe on only what is needed. The Rtcomm event topic tree makes it easy for consumers to filter on specific session events. The following details what the event topic tree looks like (note that .. defines the event topic root typically configured at the event source):
 
-`../<category>/<action>/fromEndpointID/toEndpointID}`
+`../<category>/<action>/fromEndpointID/toEndpointID`
 
 Supported category include:
 
@@ -55,7 +54,7 @@ Since much of the information about the event is contained in the topic being pu
 | Key                   | Value                                     |
 | ----------------------|:-------------------------------------------|
 | method                | RTCOMM_EVENT_FIRED |
-| rtcommVer             | e.g.  v0.1.0
+| rtcommVer             | e.g.  v1.0.0
 | timestamp             | e.g.  2014-08-01 17:32:07.735 |
 | appContext            | Application context associated with the event    |
 | reason                | Any failed event will include a reason    |
