@@ -1,7 +1,3 @@
-
-
-
-
 /**
  * Copyright 2013 IBM Corp.
  *
@@ -67,12 +63,15 @@ abilities: {
   // <https://theintern.github.io/intern/#option-useLoader> for instruction
   loaderOptions: {
     // Packages that should be registered with the loader in each testing environment
-		packages: [ { name: 'rtcomm', location: '.' } ]
+		packages: [// { name: 'rtcomm', location: 'lib/rtcomm' },
+                { name: 'support', location: 'tests/support'}],
+//		packages: [ { name: 'rtcomm', location: '.' } ]
   },
 
   // Non-functional test suite(s) to run in each browser
-	suites: [ 'rtcomm/tests/RtcConnector' ],
-  suites: [ /* 'myPackage/tests/foo', 'myPackage/tests/bar' */ ],
+	//suites: [ 'rtcomm/tests/RtcConnector' ],
+	suites: [ 'tests/rtcomm/MqttConnection'],
+ // suites: [ /* 'myPackage/tests/foo', 'myPackage/tests/bar' */ ],
 
   // Functional test suite(s) to execute against each browser once non-functional tests are completed
   functionalSuites: [ /* 'myPackage/tests/functional' */ ],
