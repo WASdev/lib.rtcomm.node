@@ -1,2 +1,4 @@
 *.md.html
 .project
+node_modules
+.DS_Store

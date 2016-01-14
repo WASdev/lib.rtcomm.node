@@ -4,7 +4,7 @@
   "description": "IBM Rtcomm Node.js Library",
   "main": "index.js",
   "dependencies": {
-    "mqtt": "~0.3.11"
+    "mqtt": "~1.6.3"
   },
   "devDependencies": {
     "intern": "~2.0.3"
