@@ -1,6 +1,6 @@
 {
   "name": "rtcomm",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "description": "IBM Rtcomm Node.js Library",
   "main": "index.js",
   "dependencies": {
