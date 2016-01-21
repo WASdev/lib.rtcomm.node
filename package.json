@@ -1,16 +1,19 @@
 {
   "name": "rtcomm",
-  "version": "v1.0.0",
+  "version": "v1.0.1",
   "description": "IBM Rtcomm Node.js Library",
   "main": "index.js",
   "dependencies": {
-    "mqtt": "~0.3.11"
+    "mqtt": "~1.6.3"
   },
   "devDependencies": {
-    "intern": "~2.0.3"
+    "mocha": "~2.3.4",
+    "mosca": "~1.0.1",
+    "chai": "~3.4.1",
+    "bunyan": "~1.5.1"
   },
   "scripts": {
-    "test": "intern-client config=tests/intern"
+    "test": "./node_modules/.bin/mocha --reporter spec"
   },
   "keywords": [
     "rtcomm",

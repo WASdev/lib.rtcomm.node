@@ -50,3 +50,11 @@ There are three parts to the documentation of this module:
 1. The Rtcomm services protocol that is implemented by this module: [rtcomm.service.proto.spec.md](/rtcomm.service.proto.spec.md)
 2. The API specification for this module: [rtcomm.service.api.spec.md](/rtcomm.service.api.spec.md)
 3. The Presence events are defined on: [rtcomm.signaling.proto.md](https://github.com/WASdev/lib.rtcomm.clientjs/blob/master/rtcomm.signaling.proto.spec.md)
+
+##Testing
+
+This module relies on Mocha for testing and utilizes the Mosca MQTT broker. Instructions for running the test:
+
+1. From the root rtcomm-node director type: npm install
+2. Run mocha: ./node_modules/.bin/mocha
+
